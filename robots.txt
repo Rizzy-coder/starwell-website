@@ -1,0 +1,14 @@
+# StarWell Website - Robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://starwell-hh.com/sitemap.xml
+
+# Disallow sensitive or unnecessary paths
+Disallow: /cgi-bin/
+Disallow: /.htaccess
+
+# Crawl delay (optional - adjust if needed)
+Crawl-delay: 10

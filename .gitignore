@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Backups (not needed on GitHub)
+*-backup.html
+*-old*.html
+index-premium.html
+index-rich.html
+index-dark-basic.html
+
+# Environment files
+.env
+.env.local
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.log

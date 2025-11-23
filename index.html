@@ -1,0 +1,2331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Where breath meets cosmos. Personalized breathwork aligned to your celestial blueprint.">
+    <title>STARWELL — Cosmic Breathwork</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/starwell-logo-circle.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/starwell-logo-circle.png">
+    <link rel="apple-touch-icon" href="images/starwell-logo-circle.png">
+
+    <!-- Social Media / Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://starwell.app">
+    <meta property="og:title" content="STARWELL — Cosmic Breathwork">
+    <meta property="og:description" content="Where breath meets cosmos. Personalized breathwork aligned to your celestial blueprint.">
+    <meta property="og:image" content="https://starwell.app/images/starwell-logo-full.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://starwell.app">
+    <meta property="twitter:title" content="STARWELL — Cosmic Breathwork">
+    <meta property="twitter:description" content="Where breath meets cosmos. Personalized breathwork aligned to your celestial blueprint.">
+    <meta property="twitter:image" content="https://starwell.app/images/starwell-logo-full.png">
+
+    <style>
+        :root {
+            --deep-space: #0A0E1A;
+            --cosmic-purple: #4A2D7F;
+            --cosmic-blue: #1E3A7A;
+            --navy: #1A1F3A;
+            --teal: #4A7C7E;
+            --gold: #D4B87C;
+            --gold-light: #E8D4B0;
+            --gold-dark: #B89960;
+            --purple-glow: rgba(139, 122, 184, 0.15);
+            --gold-glow: rgba(212, 184, 124, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            background: var(--deep-space);
+            color: #FFFFFF;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem clamp(2rem, 5vw, 4rem);
+            background: rgba(10, 14, 26, 0.9);
+            backdrop-filter: blur(30px);
+            border-bottom: 1px solid rgba(212, 184, 124, 0.1);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px var(--purple-glow);
+        }
+
+        .logo-text {
+            font-size: 1.375rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .cta-nav {
+            padding: 0.65rem 1.5rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--deep-space);
+            border-radius: 2rem;
+            font-weight: 600;
+            box-shadow: 0 4px 20px var(--gold-glow);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem clamp(2rem, 5vw, 4rem) 4rem;
+            position: relative;
+            background: linear-gradient(180deg,
+                var(--deep-space) 0%,
+                var(--cosmic-purple) 40%,
+                var(--cosmic-blue) 80%,
+                var(--teal) 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('images/hero-background.png');
+            background-size: cover;
+            background-position: center 20%;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 80% 20%, var(--purple-glow) 0%, transparent 50%),
+                        radial-gradient(circle at 20% 80%, var(--gold-glow) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-logo {
+            text-align: center;
+            margin-bottom: 9rem;
+            margin-top: -9rem;
+        }
+
+        .hero-brand-logo {
+            width: 100%;
+            max-width: 390px;
+            height: auto;
+            opacity: 0.95;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, #FFFFFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 5rem;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            padding: 1.25rem 2.75rem;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+            color: var(--deep-space);
+            text-decoration: none;
+            border-radius: 3rem;
+            font-weight: 600;
+            font-size: 1.0625rem;
+            box-shadow: 0 10px 30px var(--gold-glow);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(212, 184, 124, 0.4);
+        }
+
+        .btn-secondary {
+            padding: 1.25rem 2.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-decoration: none;
+            border-radius: 3rem;
+            font-weight: 600;
+            font-size: 1.0625rem;
+            border: 1.5px solid rgba(212, 184, 124, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--gold);
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .badge {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .badge-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .badge-label {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Sections */
+        section {
+            padding: clamp(6rem, 12vw, 12rem) clamp(2rem, 5vw, 4rem);
+            position: relative;
+        }
+
+        .section-dark {
+            background: linear-gradient(180deg, var(--deep-space) 0%, var(--navy) 100%);
+        }
+
+        .section-cosmic {
+            background: linear-gradient(180deg, var(--navy) 0%, var(--cosmic-purple) 50%, var(--cosmic-blue) 100%);
+        }
+
+        .section-header {
+            max-width: 900px;
+            margin: 0 auto 6rem;
+            text-align: center;
+        }
+
+        .section-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        .section-description {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Zodiac Grid - Interactive */
+        .zodiac-section {
+            max-width: 1200px;
+            margin: 6rem auto 0;
+        }
+
+        .zodiac-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 2rem;
+        }
+
+        .zodiac-card {
+            position: relative;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .zodiac-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 1rem;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 4px 12px var(--purple-glow));
+            border-radius: 50%;
+            object-fit: cover;
+            background: linear-gradient(135deg, rgba(74, 45, 127, 0.2) 0%, rgba(30, 58, 122, 0.2) 100%);
+            padding: 8px;
+        }
+
+        .zodiac-card:hover .zodiac-icon {
+            opacity: 1;
+            transform: scale(1.15);
+            filter: drop-shadow(0 8px 24px var(--gold-glow));
+        }
+
+        .zodiac-name {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .zodiac-dates {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Zodiac Tooltip */
+        .zodiac-tooltip {
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: rgba(26, 31, 58, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid var(--gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            min-width: 300px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .zodiac-card:hover .zodiac-tooltip {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .tooltip-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .tooltip-description {
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.75rem;
+        }
+
+        .tooltip-breathwork {
+            font-size: 0.8125rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.7);
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(212, 184, 124, 0.3);
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            background: linear-gradient(180deg, var(--cosmic-blue) 0%, var(--deep-space) 100%);
+        }
+
+        .steps-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+
+        .step-card {
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border-radius: 1.5rem;
+            border: 1px solid rgba(212, 184, 124, 0.15);
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--deep-space);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 4px 16px var(--gold-glow);
+        }
+
+        .step-title {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .step-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Protocol Categories with Details */
+        .protocol-categories {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            gap: 2.5rem;
+        }
+
+        .protocol-category {
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(30px);
+            border-radius: 2rem;
+            border: 1px solid rgba(212, 184, 124, 0.15);
+        }
+
+        .category-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--gold);
+        }
+
+        .category-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        .protocol-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .protocol-item {
+            padding: 1.25rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            border: 1px solid rgba(212, 184, 124, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .protocol-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--gold);
+            transform: translateY(-4px);
+        }
+
+        .protocol-name {
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 0.5rem;
+        }
+
+        .protocol-free {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .protocol-detail {
+            font-size: 0.8125rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.5;
+            margin-top: 0.5rem;
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .pricing-card {
+            padding: 3.5rem;
+            border-radius: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-free {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1.5px solid rgba(212, 184, 124, 0.2);
+        }
+
+        .pricing-premium {
+            background: linear-gradient(135deg, var(--cosmic-purple) 0%, var(--cosmic-blue) 100%);
+            border: 1.5px solid var(--gold);
+            box-shadow: 0 20px 60px rgba(139, 122, 184, 0.4);
+        }
+
+        .pricing-premium:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 80px rgba(139, 122, 184, 0.5);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            right: 2rem;
+            padding: 0.5rem 1.5rem;
+            background: var(--gold);
+            color: var(--deep-space);
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .pricing-title {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .pricing-price {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 1.5rem 0;
+            line-height: 1;
+            color: var(--gold);
+        }
+
+        .pricing-period {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .pricing-features li {
+            padding: 0.875rem 0;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-cta {
+            display: block;
+            text-align: center;
+            padding: 1.125rem;
+            border-radius: 3rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-free .pricing-cta {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--deep-space);
+        }
+
+        .pricing-premium .pricing-cta {
+            background: white;
+            color: var(--cosmic-purple);
+        }
+
+        .pricing-cta:hover {
+            transform: scale(1.02);
+        }
+
+        .pricing-note {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-space);
+            padding: 4rem clamp(2rem, 5vw, 4rem) 2rem;
+            border-top: 1px solid rgba(212, 184, 124, 0.1);
+        }
+
+        .footer-logo {
+            max-width: 1400px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .footer-brand-logo {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-brand-logo:hover {
+            opacity: 1;
+        }
+
+        .footer-grid {
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-copyright {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.4);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.875rem;
+            }
+
+            .logo-text {
+                font-size: 1.125rem;
+            }
+
+            .hero {
+                padding-top: 6rem;
+            }
+
+            .zodiac-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .zodiac-tooltip {
+                position: fixed;
+                bottom: auto;
+                left: 1rem;
+                right: 1rem;
+                transform: none;
+                min-width: auto;
+            }
+
+            .steps-grid,
+            .protocol-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand-logo,
+            .about-brand-logo {
+                max-width: 200px;
+            }
+        }
+
+        /* Social Proof Stats Bar */
+        .stats-bar {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(212, 184, 124, 0.15);
+            border-bottom: 1px solid rgba(212, 184, 124, 0.15);
+            padding: 3rem clamp(2rem, 5vw, 4rem);
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-number {
+            font-size: clamp(2.25rem, 4vw, 3rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9375rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+
+        .stat-stars {
+            color: var(--gold);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Press Mentions */
+        .press-mentions {
+            text-align: center;
+            padding: 1.5rem clamp(2rem, 5vw, 4rem);
+            background: rgba(10, 14, 26, 0.5);
+        }
+
+        .press-label {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .press-quote {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem clamp(2rem, 5vw, 4rem);
+            background: var(--deep-space);
+        }
+
+        .testimonials-grid {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(74, 45, 127, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 184, 124, 0.2);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 184, 124, 0.15);
+            border-color: rgba(212, 184, 124, 0.4);
+        }
+
+        .testimonial-stars {
+            color: var(--gold);
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-quote {
+            font-size: 1.0625rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-size: 0.9375rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .testimonial-role {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 0.25rem;
+        }
+
+        /* The Science Section */
+        .science-section {
+            padding: 6rem clamp(2rem, 5vw, 4rem);
+            background: linear-gradient(180deg, var(--deep-space) 0%, var(--navy) 50%, var(--deep-space) 100%);
+            position: relative;
+        }
+
+        .science-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(139, 122, 184, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .science-grid {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .science-card {
+            background: rgba(74, 45, 127, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 184, 124, 0.15);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .science-card:hover {
+            border-color: rgba(212, 184, 124, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .science-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .science-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .science-description {
+            font-size: 0.9375rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            padding: 6rem clamp(2rem, 5vw, 4rem);
+            background: var(--deep-space);
+        }
+
+        .comparison-table {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            background: rgba(74, 45, 127, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 184, 124, 0.2);
+            border-radius: 1.5rem;
+            overflow: hidden;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(212, 184, 124, 0.1);
+        }
+
+        .comparison-table th {
+            background: rgba(212, 184, 124, 0.1);
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1.0625rem;
+        }
+
+        .comparison-table td {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9375rem;
+        }
+
+        .comparison-check {
+            color: var(--gold);
+            font-size: 1.25rem;
+        }
+
+        .comparison-cross {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 1.25rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 6rem clamp(2rem, 5vw, 4rem);
+            background: linear-gradient(180deg, var(--navy) 0%, var(--deep-space) 100%);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            background: rgba(74, 45, 127, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 184, 124, 0.15);
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(212, 184, 124, 0.3);
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gold);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 2rem 1.5rem;
+            font-size: 0.9375rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 6rem clamp(2rem, 5vw, 4rem);
+            background: var(--deep-space);
+        }
+
+        .about-logo {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-brand-logo {
+            width: 100%;
+            max-width: 375px;
+            height: auto;
+            opacity: 0.95;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            text-align: center;
+        }
+
+        .about-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 6rem clamp(2rem, 5vw, 4rem);
+            background: linear-gradient(180deg, var(--deep-space) 0%, var(--navy) 50%, var(--deep-space) 100%);
+            position: relative;
+        }
+
+        .gallery-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(139, 122, 184, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(212, 184, 124, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 6rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .gallery-item {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .gallery-item-reverse {
+            grid-template-columns: 1.2fr 1fr;
+        }
+
+        .gallery-item-reverse .gallery-phone {
+            order: 2;
+        }
+
+        .gallery-item-reverse .gallery-description {
+            order: 1;
+            text-align: left;
+        }
+
+        .gallery-phone {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery-screenshot {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 32px;
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(139, 122, 184, 0.2),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .gallery-screenshot:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.6),
+                0 0 60px rgba(139, 122, 184, 0.3),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+        }
+
+        .gallery-description {
+            text-align: left;
+        }
+
+        .gallery-title {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .gallery-text {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        @media (max-width: 768px) {
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .science-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                overflow-x: auto;
+            }
+
+            .gallery-grid {
+                gap: 4rem;
+            }
+
+            .gallery-item,
+            .gallery-item-reverse {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .gallery-item-reverse .gallery-phone,
+            .gallery-item-reverse .gallery-description {
+                order: unset;
+            }
+
+            .gallery-description {
+                text-align: center;
+            }
+
+            .gallery-screenshot {
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo-link">
+                <img src="images/app-icon.png" alt="StarWell" class="logo-icon">
+                <span class="logo-text">STARWELL</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#zodiac">Zodiac</a></li>
+                <li><a href="#protocols">Protocols</a></li>
+                <li><a href="#reports">Reports</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#download" class="cta-nav">Download</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="images/starwell-logo-full.png" alt="StarWell" class="hero-brand-logo">
+            </div>
+            <h1>Where breath<br>meets cosmos</h1>
+            <p class="hero-subtitle">
+                Seeking greater calm, clarity, and alignment? StarWell personalizes breathwork to your unique birth chart, guiding you toward inner balance—one cosmic breath at a time.
+            </p>
+            <div class="hero-ctas">
+                <a href="#download" class="btn-primary">Begin Your Journey</a>
+                <a href="#features" class="btn-secondary">Explore the Cosmos</a>
+            </div>
+            <div class="trust-badges">
+                <div class="badge">
+                    <div class="badge-number">25</div>
+                    <div class="badge-label">Sacred Protocols</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-number">800+</div>
+                    <div class="badge-label">Cosmic Factors</div>
+                </div>
+                <div class="badge">
+                    <div class="badge-number">14 Days</div>
+                    <div class="badge-label">Free Trial</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Stats Bar -->
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-stars">★★★★★</div>
+                <div class="stat-number">4.8</div>
+                <div class="stat-label">App Store Rating</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15,000+</div>
+                <div class="stat-label">Cosmic Wellness Seekers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3,000+</div>
+                <div class="stat-label">Calculations Per Second</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">800+</div>
+                <div class="stat-label">Cosmic Factors Analyzed</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark how-it-works" id="features">
+        <div class="section-header">
+            <div class="section-label">How It Works</div>
+            <h2 class="section-title">Your cosmic alignment<br>in four steps</h2>
+            <p class="section-description">
+                StarWell combines your unique birth chart with real-time planetary movements
+                to recommend the perfect breathing practice for this exact moment.
+            </p>
+        </div>
+
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Enter Your Birth Data</h3>
+                <p class="step-description">
+                    Provide your birth date, time, and location. We calculate your complete natal chart using Swiss Ephemeris—the same system used by NASA and professional astronomers.
+                </p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Receive Daily Guidance</h3>
+                <p class="step-description">
+                    Each morning, six personalized cards illuminate your path—breathing recommendations, career insights, relationship wisdom, health timing, and more—all calibrated to today's transits.
+                </p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Practice Sacred Breathwork</h3>
+                <p class="step-description">
+                    Follow animated mandalas through 25 protocols—from calming lunar breath to energizing solar fire. Each technique channels specific celestial energies aligned to your chart.
+                </p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3 class="step-title">Track Your Transformation</h3>
+                <p class="step-description">
+                    Monitor your journey with mood tracking, streak counting, and analytics showing how cosmic alignment enhances your practice. Watch patterns emerge as you evolve.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Science Section -->
+    <section class="science-section">
+        <div class="section-header">
+            <div class="section-label">Trusted Technology</div>
+            <h2 class="section-title">Why 15,000+ users<br>trust StarWell</h2>
+            <p class="section-description">
+                Every recommendation is grounded in both ancient wisdom and modern science,<br>
+                delivering precise, personalized guidance you can rely on.
+            </p>
+        </div>
+
+        <div class="science-grid">
+            <div class="science-card">
+                <div class="science-icon">☉</div>
+                <h3 class="science-title">NASA-Grade Astronomical Data</h3>
+                <p class="science-description">
+                    We use Swiss Ephemeris—the same system professional astronomers and NASA use—to calculate planetary positions with sub-arcminute precision (1/60th of a degree accurate).
+                </p>
+            </div>
+
+            <div class="science-card">
+                <div class="science-icon">∞</div>
+                <h3 class="science-title">25 Curated Breathing Techniques</h3>
+                <p class="science-description">
+                    From calming lunar breath to energizing solar fire, each protocol is carefully designed with specific rhythms, holds, and patterns. Our library spans practices that may support relaxation, focus, and balance—for general wellness exploration, not medical treatment.
+                </p>
+            </div>
+
+            <div class="science-card">
+                <div class="science-icon">⚡</div>
+                <h3 class="science-title">800+ Calculations in 0.1 Seconds</h3>
+                <p class="science-description">
+                    Our algorithm performs over 3,000 calculations analyzing 800+ cosmic factors (planetary positions, transits, aspects, house placements) to match you with the perfect protocol.
+                </p>
+            </div>
+
+            <div class="science-card">
+                <div class="science-icon">◐</div>
+                <h3 class="science-title">Privacy-First Architecture</h3>
+                <p class="science-description">
+                    Your birth chart and personal data stay private. We use end-to-end encryption and never share your astrological information with third parties.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-cosmic" id="zodiac">
+        <div class="section-header">
+            <div class="section-label">The Zodiac Wheel</div>
+            <h2 class="section-title">Twelve paths to<br>cosmic wisdom</h2>
+            <p class="section-description">
+                Each zodiac sign carries unique energies and qualities. Hover over any sign
+                to discover its breathwork focus and how StarWell channels its power.
+            </p>
+        </div>
+
+        <div class="zodiac-section">
+            <div class="zodiac-grid">
+                <div class="zodiac-card">
+                    <img src="images/zodiac/zodiac-aries@2x.png" alt="Aries" class="zodiac-icon">
+                    <div class="zodiac-name">Aries</div>
+                    <div class="zodiac-dates">Mar 21 - Apr 19</div>
+                    <div class="zodiac-tooltip">
+                        <div class="tooltip-title">Aries ♈ The Ram</div>
+                        <div class="tooltip-description">Pioneering energy and new beginnings. Bold, courageous, and driven to initiate action.</div>
+                        <div class="tooltip-breathwork">Breathwork: Energizing breath to ignite inner fire</div>
+                    </div>
+                </div>
+
+                <div class="zodiac-card">
+                    <img src="images/zodiac/zodiac-taurus@2x.png" alt="Taurus" class="zodiac-icon">
+                    <div class="zodiac-name">Taurus</div>
+                    <div class="zodiac-dates">Apr 20 - May 20</div>
+                    <div class="zodiac-tooltip">
+                        <div class="tooltip-title">Taurus ♉ The Bull</div>
+                        <div class="tooltip-description">Grounding energy and sensual stability. Patient, reliable, and deeply connected to earth.</div>
+                        <div class="tooltip-breathwork">Breathwork: Grounding breath to connect with earth energy</div>
+                    </div>
+                </div>
+
+                <div class="zodiac-card">
+                    <img src="images/zodiac/zodiac-gemini@2x.png" alt="Gemini" class="zodiac-icon">
+                    <div class="zodiac-name">Gemini</div>
+                    <div class="zodiac-dates">May 21 - Jun 20</div>
+                    <div class="zodiac-tooltip">
+                        <div class="tooltip-title">Gemini ♊ The Twins</div>
+                        <div class="tooltip-description">Communicative energy and mental agility. Curious, adaptable, and intellectually vibrant.</div>
+                        <div class="tooltip-breathwork">Breathwork: Rhythmic breath to enhance mental clarity</div>
+                    </div>
+                </div>
+
+                <div class="zodiac-card">
+                    <img src="images/zodiac/zodiac-cancer@2x.png" alt="Cancer" class="zodiac-icon">
+                    <div class="zodiac-name">Cancer</div>
+                    <div class="zodiac-dates">Jun 21 - Jul 22</div>
+                    <div class="zodiac-tooltip">
+                        <div class="tooltip-title">Cancer ♋ The Crab</div>
+                        <div class="tooltip-description">Nurturing energy and emotional depth. Intuitive, protective, and deeply empathetic.</div>
+                        <div class="tooltip-breathwork">Breathwork: Nurturing breath to honor emotional needs</div>
+                    </div>
+                </div>
+
+                <div class="zodiac-card">
+                    <img src="images/zodiac/zodiac-leo@2x.png" alt="Leo" class="zodiac-icon">
+                    <div class="zodiac-name">Leo</div>
+                    <div class="zodiac-dates">Jul 23 - Aug 22</div>
+                    <div class="zodiac-tooltip">
+                        <div class="tooltip-title">Leo ♌ The Lion</div>
+                        <div class="tooltip-description">Creative energy and radiant confidence. Charismatic, generous, and naturally magnetic.</div>
+                        <div class="tooltip-breathwork">Breathwork: Heart-opening breath to express authentic self</div>
+                    </div>
+                </div>
+
+                <div class="zodiac-card">
+                    <img src="images/zodiac/zodiac-virgo@2x.png" alt="Virgo" class="zodiac-icon">
+                    <div class="zodiac-name">Virgo</div>
+                    <div class="zodiac-dates">Aug 23 - Sep 22</div>
+                    <div class="zodiac-tooltip">
+                        <div class="tooltip-title">Virgo ♍ The Virgin</div>
+                        <div class="tooltip-description">Perfecting energy and analytical precision. Discerning, practical, and detail-oriented.</div>
+                        <div class="tooltip-breathwork">Breathwork: Precise breath to cultivate inner wisdom</div>
+                    </div>
+                </div>
+
+                <div class="zodiac-card">
+                    <img src="images/zodiac/zodiac-libra@2x.png" alt="Libra" class="zodiac-icon">
+                    <div class="zodiac-name">Libra</div>
+                    <div class="zodiac-dates">Sep 23 - Oct 22</div>
+                    <div class="zodiac-tooltip">
+                        <div class="tooltip-title">Libra ♎ The Scales</div>
+                        <div class="tooltip-description">Harmonizing energy and balanced relationships. Diplomatic, fair-minded, and aesthetically refined.</div>
+                        <div class="tooltip-breathwork">Breathwork: Balancing breath to harmonize body and mind</div>
+                    </div>
+                </div>
+
+                <div class="zodiac-card">
+                    <img src="images/zodiac/zodiac-scorpio@2x.png" alt="Scorpio" class="zodiac-icon">
+                    <div class="zodiac-name">Scorpio</div>
+                    <div class="zodiac-dates">Oct 23 - Nov 21</div>
+                    <div class="zodiac-tooltip">
+                        <div class="tooltip-title">Scorpio ♏ The Scorpion</div>
+                        <div class="tooltip-description">Transformative energy and deep intuition. Intense, passionate, and powerfully regenerative.</div>
+                        <div class="tooltip-breathwork">Breathwork: Transformative breath to release and renew</div>
+                    </div>
+                </div>
+
+                <div class="zodiac-card">
+                    <img src="images/zodiac/zodiac-sagittarius@2x.png" alt="Sagittarius" class="zodiac-icon">
+                    <div class="zodiac-name">Sagittarius</div>
+                    <div class="zodiac-dates">Nov 22 - Dec 21</div>
+                    <div class="zodiac-tooltip">
+                        <div class="tooltip-title">Sagittarius ♐ The Archer</div>
+                        <div class="tooltip-description">Expansive energy and philosophical wisdom. Optimistic, adventurous, and truth-seeking.</div>
+                        <div class="tooltip-breathwork">Breathwork: Expansive breath to explore inner landscapes</div>
+                    </div>
+                </div>
+
+                <div class="zodiac-card">
+                    <img src="images/zodiac/zodiac-capricorn@2x.png" alt="Capricorn" class="zodiac-icon">
+                    <div class="zodiac-name">Capricorn</div>
+                    <div class="zodiac-dates">Dec 22 - Jan 19</div>
+                    <div class="zodiac-tooltip">
+                        <div class="tooltip-title">Capricorn ♑ The Goat</div>
+                        <div class="tooltip-description">Disciplined energy and ambitious structure. Patient, responsible, and masterfully strategic.</div>
+                        <div class="tooltip-breathwork">Breathwork: Structured breath to build inner strength</div>
+                    </div>
+                </div>
+
+                <div class="zodiac-card">
+                    <img src="images/zodiac/zodiac-aquarius@2x.png" alt="Aquarius" class="zodiac-icon">
+                    <div class="zodiac-name">Aquarius</div>
+                    <div class="zodiac-dates">Jan 20 - Feb 18</div>
+                    <div class="zodiac-tooltip">
+                        <div class="tooltip-title">Aquarius ♒ The Water Bearer</div>
+                        <div class="tooltip-description">Innovative energy and humanitarian vision. Progressive, independent, and intellectually revolutionary.</div>
+                        <div class="tooltip-breathwork">Breathwork: Innovative breath to awaken higher consciousness</div>
+                    </div>
+                </div>
+
+                <div class="zodiac-card">
+                    <img src="images/zodiac/zodiac-pisces@2x.png" alt="Pisces" class="zodiac-icon">
+                    <div class="zodiac-name">Pisces</div>
+                    <div class="zodiac-dates">Feb 19 - Mar 20</div>
+                    <div class="zodiac-tooltip">
+                        <div class="tooltip-title">Pisces ♓ The Fish</div>
+                        <div class="tooltip-description">Compassionate energy and spiritual connection. Empathetic, imaginative, and mystically attuned.</div>
+                        <div class="tooltip-breathwork">Breathwork: Flowing breath to connect with universal compassion</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark" id="protocols">
+        <div class="section-header">
+            <div class="section-label">25 Sacred Pathways</div>
+            <h2 class="section-title">Breathwork aligned to<br>celestial forces</h2>
+            <p class="section-description">
+                Each protocol channels specific zodiacal and planetary energies. One practice
+                to begin your journey, twenty-four more awaiting discovery.
+            </p>
+        </div>
+
+        <div class="protocol-categories">
+            <div class="protocol-category">
+                <div class="category-header">
+                    <h3 class="category-title">Calming Waters</h3>
+                    <p class="category-subtitle">Ten protocols for release, rest, and flowing with emotional tides</p>
+                </div>
+                <div class="protocol-grid">
+                    <div class="protocol-item">
+                        <div class="protocol-name">Deep Relaxation <span class="protocol-free">FREE</span></div>
+                        <div class="protocol-detail">6 min · Beginner · Gentle, slow breathing that may encourage natural relaxation</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Moon Cycle Harmony</div>
+                        <div class="protocol-detail">8 min · Intermediate · Flow with lunar energy for emotional balance</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Venus Harmony Breath</div>
+                        <div class="protocol-detail">7 min · Beginner · Connect with beauty and peaceful relationships</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Cancer Moon Tides</div>
+                        <div class="protocol-detail">8 min · Intermediate · Nurture your emotional depths with lunar waves</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Taurus Earth Grounding</div>
+                        <div class="protocol-detail">8 min · Beginner · Root deeply into earth's stable energy</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Pisces Oceanic Flow</div>
+                        <div class="protocol-detail">10 min · Advanced · Merge with cosmic consciousness</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Neptune Dream Waves</div>
+                        <div class="protocol-detail">9 min · Intermediate · Dissolve into mystical tranquility</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Lunar Cycle Release</div>
+                        <div class="protocol-detail">7 min · Beginner · Let go with the waning moon</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Water Element Flow</div>
+                        <div class="protocol-detail">8 min · Beginner · Move like water through the breath</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Scorpio Deep Dive</div>
+                        <div class="protocol-detail">10 min · Advanced · Transform through emotional depths</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="protocol-category">
+                <div class="category-header">
+                    <h3 class="category-title">Igniting Fire</h3>
+                    <p class="category-subtitle">Six protocols for vitality, courage, and dynamic action</p>
+                </div>
+                <div class="protocol-grid">
+                    <div class="protocol-item">
+                        <div class="protocol-name">Aries Fire Ignition</div>
+                        <div class="protocol-detail">6 min · Intermediate · Channel Mars energy for courage and leadership</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Leo Solar Radiance</div>
+                        <div class="protocol-detail">8 min · Intermediate · Embody the Sun's regal, creative power</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Sun Radiance Protocol</div>
+                        <div class="protocol-detail">7 min · Beginner · Bask in solar vitality and life force</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Mars Activation Breath</div>
+                        <div class="protocol-detail">6 min · Advanced · Ignite warrior energy and drive</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Sagittarius Fire Arrow</div>
+                        <div class="protocol-detail">7 min · Intermediate · Aim your energy toward your vision</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Jupiter Expansion Burst</div>
+                        <div class="protocol-detail">8 min · Advanced · Amplify confidence and abundance</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="protocol-category">
+                <div class="category-header">
+                    <h3 class="category-title">Clarifying Air</h3>
+                    <p class="category-subtitle">Nine protocols for mental clarity, focus, and precision</p>
+                </div>
+                <div class="protocol-grid">
+                    <div class="protocol-item">
+                        <div class="protocol-name">Gemini Twin Balance</div>
+                        <div class="protocol-detail">7 min · Intermediate · Harmonize dual aspects of mind</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Virgo Precision</div>
+                        <div class="protocol-detail">8 min · Intermediate · Refine your analytical clarity</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Libra Balance Scales</div>
+                        <div class="protocol-detail">8 min · Beginner · Find equilibrium in breath and being</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Sagittarius Expansion</div>
+                        <div class="protocol-detail">8 min · Intermediate · Open to infinite philosophical wisdom</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Aquarius Innovation</div>
+                        <div class="protocol-detail">7 min · Advanced · Awaken higher consciousness and insight</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Mercury Mind Clarity</div>
+                        <div class="protocol-detail">6 min · Beginner · Sharpen mental focus and communication</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Air Element Rising</div>
+                        <div class="protocol-detail">7 min · Intermediate · Elevate thoughts to new perspectives</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Uranus Breakthrough</div>
+                        <div class="protocol-detail">8 min · Advanced · Break through mental limitations</div>
+                    </div>
+                    <div class="protocol-item">
+                        <div class="protocol-name">Capricorn Structure</div>
+                        <div class="protocol-detail">9 min · Intermediate · Build disciplined focus and mastery</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="section-header">
+            <div class="section-label">Loved by Thousands</div>
+            <h2 class="section-title">What our community<br>is saying</h2>
+            <p class="section-description">
+                Real transformations from cosmic wellness seekers<br>
+                who aligned their breath with the stars
+            </p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote">
+                    "StarWell transformed my morning routine. The personalized breathwork based on my birth chart is uncanny—it's like the app knows exactly what I need each day. I've never felt more aligned."
+                </p>
+                <div class="testimonial-author">Sarah M.</div>
+                <div class="testimonial-role">Premium Member</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote">
+                    "As someone skeptical of astrology, I was blown away. The breathing techniques alone are worth it, but the cosmic timing makes them even more powerful. I feel more centered and calm throughout my day."
+                </p>
+                <div class="testimonial-author">James K.</div>
+                <div class="testimonial-role">6 Months Active</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote">
+                    "The level of personalization is incredible. Every protocol recommendation feels perfectly matched to my energy that day. This isn't just another meditation app—it's a complete wellness system."
+                </p>
+                <div class="testimonial-author">Maya L.</div>
+                <div class="testimonial-role">Yoga Instructor</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote">
+                    "I've tried Calm, Headspace, and others. StarWell is different. The astrological integration isn't gimmicky—it actually enhances the breathwork. The evening protocols have become an essential part of my bedtime routine."
+                </p>
+                <div class="testimonial-author">David R.</div>
+                <div class="testimonial-role">Premium Member</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote">
+                    "The science behind this is solid. Swiss Ephemeris data combined with proven breathwork protocols—it's the perfect blend of ancient wisdom and modern technology. Highly recommend."
+                </p>
+                <div class="testimonial-author">Dr. Elena P.</div>
+                <div class="testimonial-role">Wellness Coach</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote">
+                    "Finally, an app that respects both astrology and breathwork. The daily guidance cards are spot-on, and the animated mandalas during sessions are absolutely mesmerizing. Worth every penny."
+                </p>
+                <div class="testimonial-author">Sophia T.</div>
+                <div class="testimonial-role">1 Year Active</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshot Gallery Section -->
+    <section class="gallery-section">
+        <div class="section-header">
+            <div class="section-label">See It In Action</div>
+            <h2 class="section-title">Experience the journey<br>through the cosmos</h2>
+            <p class="section-description">
+                Explore the beautifully crafted interface designed to guide you toward inner alignment
+            </p>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Daily Guidance -->
+            <div class="gallery-item">
+                <div class="gallery-phone">
+                    <img src="images/screenshots/daily-guidance.png" alt="Daily personalized guidance" class="gallery-screenshot">
+                </div>
+                <div class="gallery-description">
+                    <h3 class="gallery-title">Daily Cosmic Guidance</h3>
+                    <p class="gallery-text">
+                        Wake up to personalized breathwork recommendations matched to today's planetary energies.
+                        Your practice evolves with the cosmos, ensuring you're always in alignment with the natural rhythms of the universe.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Birth Chart -->
+            <div class="gallery-item gallery-item-reverse">
+                <div class="gallery-phone">
+                    <img src="images/screenshots/birth-chart.png" alt="Birth chart wheel visualization" class="gallery-screenshot">
+                </div>
+                <div class="gallery-description">
+                    <h3 class="gallery-title">Your Cosmic Blueprint</h3>
+                    <p class="gallery-text">
+                        Discover your complete astrological profile with a beautifully rendered natal chart wheel.
+                        See your Sun, Moon, Rising signs and all planetary positions visualized in an intuitive,
+                        interactive format that reveals your unique cosmic fingerprint.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Breathing Session -->
+            <div class="gallery-item">
+                <div class="gallery-phone">
+                    <img src="images/screenshots/breathe-in.png" alt="Active breathing session" class="gallery-screenshot">
+                </div>
+                <div class="gallery-description">
+                    <h3 class="gallery-title">Guided Breathing Sessions</h3>
+                    <p class="gallery-text">
+                        Immerse yourself in beautifully animated breathing sessions with cosmic visualizations that
+                        pulse and expand with your breath. Each protocol features unique mandala patterns and
+                        ambient soundscapes designed to deepen your practice.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Natal Chart Detail -->
+            <div class="gallery-item gallery-item-reverse">
+                <div class="gallery-phone">
+                    <img src="images/screenshots/natal-chart-detail.png" alt="Detailed natal chart analysis" class="gallery-screenshot">
+                </div>
+                <div class="gallery-description">
+                    <h3 class="gallery-title">Deep Astrological Insights</h3>
+                    <p class="gallery-text">
+                        Explore your cosmic profile with detailed interpretations of your Sun, Moon, and Rising signs.
+                        Understand your core identity, emotional nature, and how you present yourself to the world—all
+                        woven into your personalized breathwork journey.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Guidance Card -->
+            <div class="gallery-item">
+                <div class="gallery-phone">
+                    <img src="images/screenshots/guidance-card.png" alt="Daily guidance card expanded" class="gallery-screenshot">
+                </div>
+                <div class="gallery-description">
+                    <h3 class="gallery-title">Six Daily Cards</h3>
+                    <p class="gallery-text">
+                        Receive comprehensive cosmic guidance across career, relationships, health, personal growth,
+                        finances, and intentions. Each card provides actionable insights, cosmic timing, and practical
+                        wisdom aligned with your birth chart and current transits.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Planetary Positions -->
+            <div class="gallery-item gallery-item-reverse">
+                <div class="gallery-phone">
+                    <img src="images/screenshots/planetary-positions.png" alt="Planetary positions in signs" class="gallery-screenshot">
+                </div>
+                <div class="gallery-description">
+                    <h3 class="gallery-title">Real-Time Planetary Tracking</h3>
+                    <p class="gallery-text">
+                        See exactly where each planet sits in your natal chart with sub-arcminute precision using
+                        Swiss Ephemeris data. Understand how celestial bodies influence different areas of your life,
+                        from identity and emotions to communication, relationships, and beyond.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Breathing Hold Phase -->
+            <div class="gallery-item">
+                <div class="gallery-phone">
+                    <img src="images/screenshots/breathe-hold.png" alt="Breathing hold phase" class="gallery-screenshot">
+                </div>
+                <div class="gallery-description">
+                    <h3 class="gallery-title">Dynamic Guidance</h3>
+                    <p class="gallery-text">
+                        Experience multi-sensory breathwork with animated cosmic mandalas that shift through each
+                        phase, optional guided voiceovers that coach your rhythm, and ambient soundscapes from
+                        ocean waves to cosmic frequencies—creating an immersive practice that deepens your focus.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Achievements -->
+            <div class="gallery-item gallery-item-reverse">
+                <div class="gallery-phone">
+                    <img src="images/screenshots/achievements.png" alt="Achievement tracking" class="gallery-screenshot">
+                </div>
+                <div class="gallery-description">
+                    <h3 class="gallery-title">Track Your Transformation</h3>
+                    <p class="gallery-text">
+                        Celebrate your progress with an achievement system that rewards consistency and exploration.
+                        Master different protocol categories, build meditation streaks, and watch your cosmic wellness
+                        practice deepen over time.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-cosmic" id="pricing">
+        <div class="section-header">
+            <div class="section-label">Your Investment</div>
+            <h2 class="section-title">Begin freely,<br>deepen when called</h2>
+            <p class="section-description">
+                Start with essential wisdom. Unlock the complete cosmic library when you're ready
+                to journey deeper into alignment with the stars.
+            </p>
+        </div>
+
+        <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+            <div class="pricing-card pricing-free">
+                <h3 class="pricing-title">Free</h3>
+                <div class="pricing-price">$0</div>
+                <p class="pricing-period">Forever</p>
+                <ul class="pricing-features">
+                    <li>One breathing protocol</li>
+                    <li>Daily sun sign guidance</li>
+                    <li>Moon phase tracking</li>
+                    <li>Session history</li>
+                    <li>Progress streaks</li>
+                </ul>
+                <a href="#download" class="pricing-cta">Start Free</a>
+            </div>
+
+            <div class="pricing-card pricing-premium">
+                <div class="pricing-badge">Monthly</div>
+                <h3 class="pricing-title">Premium Monthly</h3>
+                <div class="pricing-price">$8.99</div>
+                <p class="pricing-period">per month</p>
+                <ul class="pricing-features">
+                    <li><strong>All 25 breathing protocols</strong></li>
+                    <li><strong>Complete birth chart analysis</strong></li>
+                    <li><strong>Six daily guidance cards</strong></li>
+                    <li>Advanced transit tracking</li>
+                    <li>Protocol effectiveness insights</li>
+                    <li>All mandala visual styles</li>
+                    <li>Premium cosmic soundscapes</li>
+                </ul>
+                <a href="#download" class="pricing-cta">14 Days Free</a>
+                <p class="pricing-note">Cancel anytime</p>
+            </div>
+
+            <div class="pricing-card pricing-premium" style="position: relative;">
+                <div class="pricing-badge" style="background: linear-gradient(135deg, #D4B87C 0%, #E8D4B0 100%); color: #1A1F3A;">Best Value</div>
+                <h3 class="pricing-title">Premium Annual</h3>
+                <div class="pricing-price">$49.99</div>
+                <p class="pricing-period">per year</p>
+                <p style="font-size: 0.875rem; color: #D4B87C; margin-top: 0.5rem; font-weight: 600;">Save 53% vs monthly</p>
+                <ul class="pricing-features">
+                    <li><strong>All 25 breathing protocols</strong></li>
+                    <li><strong>Complete birth chart analysis</strong></li>
+                    <li><strong>Six daily guidance cards</strong></li>
+                    <li>Advanced transit tracking</li>
+                    <li>Protocol effectiveness insights</li>
+                    <li>All mandala visual styles</li>
+                    <li>Premium cosmic soundscapes</li>
+                </ul>
+                <a href="#download" class="pricing-cta">14 Days Free</a>
+                <p class="pricing-note">Cancel anytime • Just $4.16/month</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why StarWell Comparison Section -->
+    <section class="comparison-section">
+        <div class="section-header">
+            <div class="section-label">The StarWell Difference</div>
+            <h2 class="section-title">Why choose StarWell over<br>other wellness apps?</h2>
+            <p class="section-description">
+                Not all breathwork apps are created equal. See how StarWell's<br>
+                cosmic alignment sets it apart from generic meditation platforms.
+            </p>
+        </div>
+
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Generic Apps</th>
+                        <th>StarWell</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Personalization</strong></td>
+                        <td><span class="comparison-cross">✕</span> One-size-fits-all</td>
+                        <td><span class="comparison-check">✓</span> Birth chart aligned</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Daily Guidance</strong></td>
+                        <td><span class="comparison-cross">✕</span> Static content library</td>
+                        <td><span class="comparison-check">✓</span> Real-time planetary transits</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Protocol Matching</strong></td>
+                        <td><span class="comparison-cross">✕</span> Manual selection</td>
+                        <td><span class="comparison-check">✓</span> Algorithm-powered cosmic alignment</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Astronomical Data</strong></td>
+                        <td><span class="comparison-cross">✕</span> Not applicable</td>
+                        <td><span class="comparison-check">✓</span> NASA-grade Swiss Ephemeris</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Protocol Library</strong></td>
+                        <td>10-20 generic exercises</td>
+                        <td><span class="comparison-check">✓</span> 25 elementally categorized</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Visual Guidance</strong></td>
+                        <td>Basic animations</td>
+                        <td><span class="comparison-check">✓</span> Animated cosmic mandalas</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-header">
+            <div class="section-label">Common Questions</div>
+            <h2 class="section-title">Everything you need<br>to know</h2>
+            <p class="section-description">
+                Have questions about StarWell? We've got answers.<br>
+                Still curious? Contact us anytime.
+            </p>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do I need to know my exact birth time?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    While exact birth time helps create the most precise birth chart, StarWell still works wonderfully without it. We'll use 12:00 PM as a default time, which still provides valuable cosmic insights. Check your birth certificate if you want maximum precision.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What makes StarWell different from Calm or Headspace?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    While apps like Calm and Headspace offer excellent meditation content, they provide the same experience to everyone. StarWell personalizes your breathwork based on your unique birth chart and real-time planetary movements. Every day, you receive recommendations aligned to YOUR cosmic blueprint—not a generic playlist.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is the astrological data scientifically accurate?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Absolutely. StarWell uses Swiss Ephemeris, the same astronomical calculation system used by NASA and professional astronomers worldwide. Our planetary position data is accurate to 1/60th of a degree. While astrology is an interpretive art, our astronomical calculations are grounded in hard science.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How long are the breathing sessions?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Sessions range from 3 to 20 minutes, with most protocols lasting 5-8 minutes. You can filter by duration to fit breathwork into your schedule—whether you have 3 minutes before a meeting or 20 minutes for deep practice. Every protocol shows its length upfront.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I use StarWell without believing in astrology?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! Many of our users are astrology skeptics who came for the breathwork and stayed for the personalization. Even if you don't believe in astrological influence, the breathing protocols themselves are traditional practices that may support general wellbeing. The cosmic matching helps you discover the right technique for you.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What's included in the free version?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    The free version includes 1 foundational breathing protocol (Deep Relaxation), your complete birth chart, daily cosmic guidance cards, and basic session tracking. You get to experience how StarWell personalizes recommendations before upgrading to access all 25+ premium protocols.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do I cancel my subscription?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Canceling is easy. Go to Settings on your iPhone → tap your name → Subscriptions → select StarWell → Cancel Subscription. Your access continues until the end of your billing period, and you can resubscribe anytime. No hard feelings—we're here when you're ready to return.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is my birth chart data private?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, completely. Your birth chart and personal data are encrypted end-to-end and never shared with third parties. We take privacy seriously—your cosmic blueprint stays between you and the stars (and our secure servers).
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section">
+        <div class="about-logo">
+            <img src="images/starwell-logo-full.png" alt="StarWell" class="about-brand-logo">
+        </div>
+        <div class="section-header">
+            <div class="section-label">Our Mission</div>
+            <h2 class="section-title">Where breath meets cosmos</h2>
+            <p class="section-description">
+                Bridging ancient wisdom and modern technology to help you<br>
+                discover alignment, one breath at a time.
+            </p>
+        </div>
+
+        <div class="about-content">
+            <p class="about-text">
+                StarWell was born from a simple question: What if breathwork could be personalized to your unique cosmic blueprint? We believe that wellness isn't one-size-fits-all, and that the ancient practice of aligning with celestial rhythms has profound relevance in our modern world.
+            </p>
+            <p class="about-text">
+                Built by a team of breathwork practitioners, astrologers, and technologists, StarWell combines NASA-grade astronomical data with traditional breathing protocols. Our mission is to make cosmic wellness accessible and help guide you on your journey toward greater alignment.
+            </p>
+            <p class="about-text">
+                Whether you're a seasoned practitioner or completely new to breathwork and astrology, StarWell meets you where you are. We're honored to guide over 15,000 seekers on their journey toward deeper alignment, presence, and peace.
+            </p>
+        </div>
+    </section>
+
+    <!-- Reports Section -->
+    <section class="section-cosmic reports-section" id="reports">
+        <div class="section-container">
+            <h2 class="section-title">Premium Astrological Reports</h2>
+            <p class="section-subtitle">
+                Comprehensive PDF reports you own forever. Professional-quality insights calculated specifically for your birth chart.
+            </p>
+
+            <div class="reports-grid">
+                <!-- Natal Chart Report -->
+                <div class="report-card" data-gradient="purple">
+                    <div class="report-header">
+                        <div class="report-icon">
+                            <svg class="icon-sparkles" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L15 8L22 9L17 14L18.5 22L12 18L5.5 22L7 14L2 9L9 8L12 2Z"/>
+                                <circle cx="7" cy="7" r="1.5" fill="currentColor"/>
+                                <circle cx="17" cy="7" r="1" fill="currentColor"/>
+                                <circle cx="7" cy="17" r="1" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="report-badge">15 Pages</div>
+                    </div>
+                    <h3 class="report-title">Natal Chart Analysis</h3>
+                    <p class="report-tagline">Your complete cosmic blueprint decoded</p>
+                    <ul class="report-features">
+                        <li>✓ Big Three (Sun, Moon, Rising) in-depth analysis</li>
+                        <li>✓ All 10 planetary placements interpreted</li>
+                        <li>✓ Elemental balance & chart patterns</li>
+                        <li>✓ Professional chart wheel visualization</li>
+                    </ul>
+                    <div class="report-footer">
+                        <div class="report-price">
+                            <span class="price-amount">$14.99</span>
+                            <span class="price-label">One-time purchase</span>
+                        </div>
+                        <p class="report-description">
+                            Discover your Big Three, planetary placements, elemental balance, and major aspects.
+                            Calculated using Swiss Ephemeris for maximum accuracy.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Lunar Cycle Report -->
+                <div class="report-card" data-gradient="gold">
+                    <div class="report-header">
+                        <div class="report-icon">
+                            <svg class="icon-moon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                                <circle cx="17" cy="6" r="1.5" fill="currentColor"/>
+                                <circle cx="19" cy="9" r="1" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="report-badge">12 Pages</div>
+                    </div>
+                    <h3 class="report-title">Lunar Cycle Guide</h3>
+                    <p class="report-tagline">Master the Moon's 8 sacred phases</p>
+                    <ul class="report-features">
+                        <li>✓ Rituals for all 8 moon phases</li>
+                        <li>✓ Personalized to your Moon sign's element</li>
+                        <li>✓ Phase-specific breathwork techniques</li>
+                        <li>✓ 90-day tracking framework</li>
+                    </ul>
+                    <div class="report-footer">
+                        <div class="report-price">
+                            <span class="price-amount">$14.99</span>
+                            <span class="price-label">One-time purchase</span>
+                        </div>
+                        <p class="report-description">
+                            Learn to work with the Moon's natural rhythms. Plant intentions at New Moons,
+                            celebrate at Full Moons, and release gracefully through waning phases.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Transit Forecast Report -->
+                <div class="report-card" data-gradient="blue">
+                    <div class="report-header">
+                        <div class="report-icon">
+                            <svg class="icon-chart" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                                <line x1="2" y1="22" x2="22" y2="22"/>
+                            </svg>
+                        </div>
+                        <div class="report-badge">18 Pages</div>
+                    </div>
+                    <h3 class="report-title">Transit Forecast</h3>
+                    <p class="report-tagline">Your 6-month cosmic weather forecast</p>
+                    <ul class="report-features">
+                        <li>✓ 6-month personalized forecast</li>
+                        <li>✓ Month-by-month energy breakdowns</li>
+                        <li>✓ Major transit analysis (Jupiter-Pluto)</li>
+                        <li>✓ Intensity heat map for planning</li>
+                    </ul>
+                    <div class="report-footer">
+                        <div class="report-price">
+                            <span class="price-amount">$19.99</span>
+                            <span class="price-label">One-time purchase</span>
+                        </div>
+                        <p class="report-description">
+                            Know when to act and when to wait. Detailed analysis of planetary influences
+                            calculated specifically for YOUR birth chart.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Compatibility Report -->
+                <div class="report-card" data-gradient="pink">
+                    <div class="report-header">
+                        <div class="report-icon">
+                            <svg class="icon-heart" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 7c-1.5-2-4-2-5.5 0-1.5 2-1.5 4.5 0 6.5L12 19l5.5-5.5c1.5-2 1.5-4.5 0-6.5-1.5-2-4-2-5.5 0z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="report-badge">20 Pages</div>
+                    </div>
+                    <h3 class="report-title">Compatibility Analysis</h3>
+                    <p class="report-tagline">Complete relationship astrological analysis</p>
+                    <ul class="report-features">
+                        <li>✓ Complete synastry analysis</li>
+                        <li>✓ Composite chart interpretation</li>
+                        <li>✓ Communication & emotional dynamics</li>
+                        <li>✓ Attraction chemistry (Venus-Mars)</li>
+                    </ul>
+                    <div class="report-footer">
+                        <div class="report-price">
+                            <span class="price-amount">$24.99</span>
+                            <span class="price-label">One-time purchase</span>
+                        </div>
+                        <p class="report-description">
+                            Understand your relationship from every astrological angle. Includes two beautifully
+                            rendered chart wheels and practical relationship guidance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reports CTA -->
+            <div class="reports-cta">
+                <div class="cta-badge">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                    <span>Available exclusively in the StarWell app</span>
+                </div>
+                <p class="cta-note">
+                    Purchase reports with one tap • Lifetime access • Professional quality PDF • Generated from your personal birth chart
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero" id="download">
+        <div class="hero-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <h2 class="section-title">Your cosmic journey awaits</h2>
+            <p class="hero-subtitle" style="margin: 0 auto 3rem;">
+                Begin with one breath. Discover how the stars guide you toward deeper peace,
+                clearer focus, and the cosmic wisdom you've been seeking.
+            </p>
+            <a href="https://apps.apple.com/app/starwell" class="btn-primary" style="font-size: 1.125rem;">
+                Download for iOS
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="images/starwell-logo-full.png" alt="StarWell by Hermes Horizon" class="footer-brand-logo">
+        </div>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#zodiac">Zodiac</a></li>
+                    <li><a href="#protocols">Protocols</a></li>
+                    <li><a href="#reports">Reports</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="support.html">Help Center</a></li>
+                    <li><a href="support.html#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="support.html#about">About</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-copyright">
+                © 2025 Hermes Horizon T/A StarWell by Hermes Horizon. All rights reserved.
+            </p>
+            <p class="footer-disclaimer">
+                For wellness and educational purposes. Not intended to diagnose, treat, cure, or prevent any medical condition.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

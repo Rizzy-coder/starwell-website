@@ -1,0 +1,19 @@
+Replace these claims with accurate database facts:
+
+ACCURATE (from database):
+- 25 breathing protocols total
+- 1 FREE protocol (Deep Relaxation)
+- 24 PREMIUM protocols
+- Categories: 10 calming, 6 energizing, 9 focus
+- NASA-grade astrology (Swiss Ephemeris)
+- Daily recommendations
+- Birth chart analysis
+- Session tracking
+
+REMOVE/SIMPLIFY (not fully implemented):
+- "32 mastery pathways" - not in database
+- "40+ achievements" - only test data in database
+- Specific zodiac protocol counts - database has different organization
+- "12 elemental mastery paths" - not all implemented
+
+Keep it simple and truthful!
