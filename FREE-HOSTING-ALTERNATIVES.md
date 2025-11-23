@@ -86,7 +86,7 @@
 
 # Option 2: CLI
 npm i -g vercel
-cd /Users/ryangreen/Desktop/StarWell-Website
+cd /Users/ryangreen/Cosmic/StarWell-Website
 vercel --prod
 ```
 
@@ -231,7 +231,7 @@ vercel --prod
 
 ### Option 2: Git Command Line (Professional)
 ```bash
-cd /Users/ryangreen/Desktop/StarWell-Website
+cd /Users/ryangreen/Cosmic/StarWell-Website
 
 # Make your changes to files
 

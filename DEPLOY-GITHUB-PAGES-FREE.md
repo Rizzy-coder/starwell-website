@@ -106,7 +106,7 @@ If you prefer using Terminal:
 
 ```bash
 # Navigate to your website folder
-cd /Users/ryangreen/Desktop/StarWell-Website
+cd /Users/ryangreen/Cosmic/StarWell-Website
 
 # Initialize git repository
 git init

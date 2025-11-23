@@ -291,11 +291,11 @@ Once deployed, monitor:
 ## Files Summary
 
 **Modified:**
-- `/Users/ryangreen/Desktop/StarWell-Website/index.html` (+152 lines)
-- `/Users/ryangreen/Desktop/StarWell-Website/styles.css` (+330 lines)
+- `/Users/ryangreen/Cosmic/StarWell-Website/index.html` (+152 lines)
+- `/Users/ryangreen/Cosmic/StarWell-Website/styles.css` (+330 lines)
 
 **Created:**
-- `/Users/ryangreen/Desktop/StarWell-Website/REPORTS-SECTION-UPDATE.md` (this file)
+- `/Users/ryangreen/Cosmic/StarWell-Website/REPORTS-SECTION-UPDATE.md` (this file)
 
 ---
 

@@ -4,7 +4,7 @@
 
 echo "🖼️  Compressing images in screenshots folder..."
 
-cd /Users/ryangreen/Desktop/StarWell-Website/images/screenshots
+cd /Users/ryangreen/Cosmic/StarWell-Website/images/screenshots
 
 # Compress each PNG to 50% quality (still looks great on web)
 for img in *.png; do
