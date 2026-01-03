@@ -1207,6 +1207,293 @@
                 max-width: 280px;
             }
         }
+
+        /* Multi-Framework Astrology Section */
+        .frameworks-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, #0A0E1A 0%, #1A1F3A 50%, #0A0E1A 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .frameworks-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(139, 122, 184, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .frameworks-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .frameworks-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .frameworks-label {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, rgba(212, 184, 124, 0.2), rgba(212, 184, 124, 0.1));
+            border: 1px solid rgba(212, 184, 124, 0.3);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .frameworks-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .frameworks-subtitle {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .frameworks-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .framework-card {
+            position: relative;
+            background: linear-gradient(145deg, rgba(26, 31, 58, 0.8), rgba(10, 14, 26, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .framework-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 1.5rem 1.5rem 0 0;
+        }
+
+        .framework-card[data-framework="western"]::before {
+            background: linear-gradient(90deg, #7B2CBF, #9D4EDD);
+        }
+
+        .framework-card[data-framework="vedic"]::before {
+            background: linear-gradient(90deg, #D4B87C, #E8D4B0);
+        }
+
+        .framework-card[data-framework="hellenistic"]::before {
+            background: linear-gradient(90deg, #14B8A6, #2DD4BF);
+        }
+
+        .framework-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .framework-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .framework-card[data-framework="western"] .framework-icon {
+            background: linear-gradient(135deg, rgba(123, 44, 191, 0.2), rgba(157, 78, 221, 0.1));
+            border: 1px solid rgba(123, 44, 191, 0.3);
+        }
+
+        .framework-card[data-framework="vedic"] .framework-icon {
+            background: linear-gradient(135deg, rgba(212, 184, 124, 0.2), rgba(212, 184, 124, 0.1));
+            border: 1px solid rgba(212, 184, 124, 0.3);
+        }
+
+        .framework-card[data-framework="hellenistic"] .framework-icon {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.2), rgba(45, 212, 191, 0.1));
+            border: 1px solid rgba(20, 184, 166, 0.3);
+        }
+
+        .framework-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #FFFFFF;
+        }
+
+        .framework-origin {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 1rem;
+        }
+
+        .framework-description {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .framework-highlights {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .framework-highlights li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            font-size: 0.9375rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .framework-highlights li::before {
+            content: '✦';
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+
+        .framework-card[data-framework="western"] .framework-highlights li::before {
+            color: #9D4EDD;
+        }
+
+        .framework-card[data-framework="vedic"] .framework-highlights li::before {
+            color: #D4B87C;
+        }
+
+        .framework-card[data-framework="hellenistic"] .framework-highlights li::before {
+            color: #2DD4BF;
+        }
+
+        .framework-zodiac {
+            display: inline-block;
+            padding: 0.375rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+        }
+
+        .framework-card[data-framework="western"] .framework-zodiac {
+            background: rgba(123, 44, 191, 0.2);
+            color: #C99DFF;
+        }
+
+        .framework-card[data-framework="vedic"] .framework-zodiac {
+            background: rgba(212, 184, 124, 0.2);
+            color: #E8D4B0;
+        }
+
+        .framework-card[data-framework="hellenistic"] .framework-zodiac {
+            background: rgba(20, 184, 166, 0.2);
+            color: #5EEAD4;
+        }
+
+        .frameworks-cta {
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(145deg, rgba(26, 31, 58, 0.6), rgba(10, 14, 26, 0.8));
+            border: 1px solid rgba(212, 184, 124, 0.2);
+            border-radius: 1.5rem;
+        }
+
+        .frameworks-cta h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #FFFFFF;
+        }
+
+        .frameworks-cta p {
+            font-size: 1.0625rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.7;
+        }
+
+        .framework-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .framework-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .framework-badge .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .framework-badge.western .dot { background: #9D4EDD; }
+        .framework-badge.vedic .dot { background: #D4B87C; }
+        .framework-badge.hellenistic .dot { background: #2DD4BF; }
+
+        @media (max-width: 1024px) {
+            .frameworks-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto 4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .frameworks-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .framework-card {
+                padding: 2rem;
+            }
+
+            .framework-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1218,10 +1505,10 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
+                <li><a href="#frameworks">Frameworks</a></li>
+                <li><a href="#reports">Reports</a></li>
                 <li><a href="#zodiac">Zodiac</a></li>
                 <li><a href="#protocols">Protocols</a></li>
-                <li><a href="#reports">Reports</a></li>
-                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#download" class="cta-nav">Download</a></li>
             </ul>
         </div>
@@ -2099,155 +2386,287 @@
         </div>
     </section>
 
-    <!-- Reports Section -->
-    <section class="section-cosmic reports-section" id="reports">
-        <div class="section-container">
-            <h2 class="section-title">Premium Astrological Reports</h2>
-            <p class="section-subtitle">
-                Comprehensive PDF reports you own forever. Professional-quality insights calculated specifically for your birth chart.
-            </p>
+    <!-- Multi-Framework Astrology Section -->
+    <section class="frameworks-section" id="frameworks">
+        <div class="frameworks-container">
+            <div class="frameworks-header">
+                <span class="frameworks-label">Three Ancient Traditions</span>
+                <h2 class="frameworks-title">Explore Astrology<br>Through Multiple Lenses</h2>
+                <p class="frameworks-subtitle">
+                    StarWell is the only app that offers complete astrological analysis across three distinct traditions.
+                    Each framework provides unique insights into your cosmic blueprint—explore one or all three to deepen your understanding.
+                </p>
+            </div>
 
-            <div class="reports-grid">
-                <!-- Natal Chart Report -->
-                <div class="report-card" data-gradient="purple">
-                    <div class="report-header">
-                        <div class="report-icon">
-                            <svg class="icon-sparkles" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2L15 8L22 9L17 14L18.5 22L12 18L5.5 22L7 14L2 9L9 8L12 2Z"/>
-                                <circle cx="7" cy="7" r="1.5" fill="currentColor"/>
-                                <circle cx="17" cy="7" r="1" fill="currentColor"/>
-                                <circle cx="7" cy="17" r="1" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <div class="report-badge">15 Pages</div>
-                    </div>
-                    <h3 class="report-title">Natal Chart Analysis</h3>
-                    <p class="report-tagline">Your complete cosmic blueprint decoded</p>
-                    <ul class="report-features">
-                        <li>✓ Big Three (Sun, Moon, Rising) in-depth analysis</li>
-                        <li>✓ All 10 planetary placements interpreted</li>
-                        <li>✓ Elemental balance & chart patterns</li>
-                        <li>✓ Professional chart wheel visualization</li>
+            <div class="frameworks-grid">
+                <!-- Western/Modern Framework -->
+                <div class="framework-card" data-framework="western">
+                    <div class="framework-icon">☉</div>
+                    <h3 class="framework-name">Western Modern</h3>
+                    <p class="framework-origin">Greco-Roman Origins • Tropical Zodiac</p>
+                    <p class="framework-description">
+                        The most widely practiced form of astrology in the Western world. Focuses on psychological
+                        development, personal growth, and self-understanding through the lens of modern psychology.
+                    </p>
+                    <ul class="framework-highlights">
+                        <li>Psychology-focused interpretations</li>
+                        <li>Tropical zodiac (fixed to seasons)</li>
+                        <li>Outer planets (Uranus, Neptune, Pluto)</li>
+                        <li>Modern house systems (Placidus)</li>
+                        <li>Personal empowerment orientation</li>
                     </ul>
-                    <div class="report-footer">
-                        <div class="report-price">
-                            <span class="price-amount">$14.99</span>
-                            <span class="price-label">One-time purchase</span>
-                        </div>
-                        <p class="report-description">
-                            Discover your Big Three, planetary placements, elemental balance, and major aspects.
-                            Calculated using Swiss Ephemeris for maximum accuracy.
-                        </p>
-                    </div>
+                    <span class="framework-zodiac">Uses Tropical Zodiac</span>
                 </div>
 
-                <!-- Lunar Cycle Report -->
-                <div class="report-card" data-gradient="gold">
-                    <div class="report-header">
-                        <div class="report-icon">
-                            <svg class="icon-moon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                                <circle cx="17" cy="6" r="1.5" fill="currentColor"/>
-                                <circle cx="19" cy="9" r="1" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <div class="report-badge">12 Pages</div>
-                    </div>
-                    <h3 class="report-title">Lunar Cycle Guide</h3>
-                    <p class="report-tagline">Master the Moon's 8 sacred phases</p>
-                    <ul class="report-features">
-                        <li>✓ Rituals for all 8 moon phases</li>
-                        <li>✓ Personalized to your Moon sign's element</li>
-                        <li>✓ Phase-specific breathwork techniques</li>
-                        <li>✓ 90-day tracking framework</li>
+                <!-- Vedic/Jyotish Framework -->
+                <div class="framework-card" data-framework="vedic">
+                    <div class="framework-icon">॥</div>
+                    <h3 class="framework-name">Vedic Jyotish</h3>
+                    <p class="framework-origin">Ancient India • Sidereal Zodiac</p>
+                    <p class="framework-description">
+                        One of the oldest astrological systems, rooted in the Vedic tradition of India. Emphasizes
+                        karma, dharma, and spiritual evolution through precise astronomical calculations.
+                    </p>
+                    <ul class="framework-highlights">
+                        <li>Karma and dharma focused</li>
+                        <li>Sidereal zodiac (fixed to stars)</li>
+                        <li>Nakshatra (lunar mansion) analysis</li>
+                        <li>Dasha timing systems</li>
+                        <li>Remedial measures guidance</li>
                     </ul>
-                    <div class="report-footer">
-                        <div class="report-price">
-                            <span class="price-amount">$14.99</span>
-                            <span class="price-label">One-time purchase</span>
-                        </div>
-                        <p class="report-description">
-                            Learn to work with the Moon's natural rhythms. Plant intentions at New Moons,
-                            celebrate at Full Moons, and release gracefully through waning phases.
-                        </p>
-                    </div>
+                    <span class="framework-zodiac">Uses Sidereal Zodiac</span>
                 </div>
 
-                <!-- Transit Forecast Report -->
-                <div class="report-card" data-gradient="blue">
-                    <div class="report-header">
-                        <div class="report-icon">
-                            <svg class="icon-chart" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-                                <line x1="2" y1="22" x2="22" y2="22"/>
-                            </svg>
-                        </div>
-                        <div class="report-badge">18 Pages</div>
-                    </div>
-                    <h3 class="report-title">Transit Forecast</h3>
-                    <p class="report-tagline">Your 6-month cosmic weather forecast</p>
-                    <ul class="report-features">
-                        <li>✓ 6-month personalized forecast</li>
-                        <li>✓ Month-by-month energy breakdowns</li>
-                        <li>✓ Major transit analysis (Jupiter-Pluto)</li>
-                        <li>✓ Intensity heat map for planning</li>
+                <!-- Hellenistic Framework -->
+                <div class="framework-card" data-framework="hellenistic">
+                    <div class="framework-icon">Ω</div>
+                    <h3 class="framework-name">Hellenistic Traditional</h3>
+                    <p class="framework-origin">Ancient Greece • Classical Techniques</p>
+                    <p class="framework-description">
+                        The original Western astrology as practiced in ancient Greece and Egypt. Features rigorous
+                        techniques and time-lord systems that reveal life themes and timing with precision.
+                    </p>
+                    <ul class="framework-highlights">
+                        <li>Classical planetary dignities</li>
+                        <li>Sect (day/night chart) analysis</li>
+                        <li>Whole Sign houses</li>
+                        <li>Traditional rulerships only</li>
+                        <li>Predictive timing techniques</li>
                     </ul>
-                    <div class="report-footer">
-                        <div class="report-price">
-                            <span class="price-amount">$19.99</span>
-                            <span class="price-label">One-time purchase</span>
-                        </div>
-                        <p class="report-description">
-                            Know when to act and when to wait. Detailed analysis of planetary influences
-                            calculated specifically for YOUR birth chart.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Compatibility Report -->
-                <div class="report-card" data-gradient="pink">
-                    <div class="report-header">
-                        <div class="report-icon">
-                            <svg class="icon-heart" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M12 7c-1.5-2-4-2-5.5 0-1.5 2-1.5 4.5 0 6.5L12 19l5.5-5.5c1.5-2 1.5-4.5 0-6.5-1.5-2-4-2-5.5 0z" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <div class="report-badge">20 Pages</div>
-                    </div>
-                    <h3 class="report-title">Compatibility Analysis</h3>
-                    <p class="report-tagline">Complete relationship astrological analysis</p>
-                    <ul class="report-features">
-                        <li>✓ Complete synastry analysis</li>
-                        <li>✓ Composite chart interpretation</li>
-                        <li>✓ Communication & emotional dynamics</li>
-                        <li>✓ Attraction chemistry (Venus-Mars)</li>
-                    </ul>
-                    <div class="report-footer">
-                        <div class="report-price">
-                            <span class="price-amount">$24.99</span>
-                            <span class="price-label">One-time purchase</span>
-                        </div>
-                        <p class="report-description">
-                            Understand your relationship from every astrological angle. Includes two beautifully
-                            rendered chart wheels and practical relationship guidance.
-                        </p>
-                    </div>
+                    <span class="framework-zodiac">Uses Tropical Zodiac</span>
                 </div>
             </div>
 
-            <!-- Reports CTA -->
-            <div class="reports-cta">
-                <div class="cta-badge">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M9 12l2 2 4-4"/>
-                    </svg>
-                    <span>Available exclusively in the StarWell app</span>
-                </div>
-                <p class="cta-note">
-                    Purchase reports with one tap • Lifetime access • Professional quality PDF • Generated from your personal birth chart
+            <div class="frameworks-cta">
+                <h3>Why Multiple Frameworks Matter</h3>
+                <p>
+                    Each tradition reveals different facets of your cosmic story. Western astrology illuminates
+                    your psychology, Vedic reveals your karmic patterns, and Hellenistic provides classical
+                    predictive insights. Together, they offer the most complete picture of who you are.
                 </p>
+                <div class="framework-badges">
+                    <span class="framework-badge western">
+                        <span class="dot"></span>
+                        Western/Modern
+                    </span>
+                    <span class="framework-badge vedic">
+                        <span class="dot"></span>
+                        Vedic/Jyotish
+                    </span>
+                    <span class="framework-badge hellenistic">
+                        <span class="dot"></span>
+                        Hellenistic
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Reports Section (Pricing Style) -->
+    <section class="section-cosmic" id="reports">
+        <div class="section-header">
+            <div class="section-label">Premium Reports</div>
+            <h2 class="section-title">Own your cosmic insights<br>forever</h2>
+            <p class="section-description">
+                Professional-quality PDF reports generated from your personal birth chart. Each report is available
+                in Western, Vedic, and Hellenistic traditions—12 unique reports to explore your cosmic blueprint.
+            </p>
+        </div>
+
+        <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+            <!-- Natal Chart Report -->
+            <div class="pricing-card pricing-premium">
+                <div class="pricing-badge">Foundation</div>
+                <h3 class="pricing-title">Natal Chart Analysis</h3>
+                <div class="pricing-price">$14.99</div>
+                <p class="pricing-period">One-time purchase</p>
+                <ul class="pricing-features">
+                    <li><strong>15+ pages of insights</strong></li>
+                    <li>Big Three deep analysis</li>
+                    <li>All planetary placements</li>
+                    <li>Major aspects & patterns</li>
+                    <li>Professional chart wheel</li>
+                    <li>Element & modality balance</li>
+                </ul>
+                <a href="#download" class="pricing-cta">Get in App</a>
+                <p class="pricing-note">Available in Western • Vedic • Hellenistic</p>
+            </div>
+
+            <!-- Lunar Cycle Report -->
+            <div class="pricing-card pricing-premium">
+                <div class="pricing-badge">Lunar</div>
+                <h3 class="pricing-title">Lunar Cycle Guide</h3>
+                <div class="pricing-price">$14.99</div>
+                <p class="pricing-period">One-time purchase</p>
+                <ul class="pricing-features">
+                    <li><strong>12+ pages of guidance</strong></li>
+                    <li>Complete 8-phase Moon guide</li>
+                    <li>Personalized to your Moon</li>
+                    <li>Phase-specific rituals</li>
+                    <li>Breathwork techniques</li>
+                    <li>90-day tracking framework</li>
+                </ul>
+                <a href="#download" class="pricing-cta">Get in App</a>
+                <p class="pricing-note">Available in Western • Vedic • Hellenistic</p>
+            </div>
+
+            <!-- Transit Forecast Report -->
+            <div class="pricing-card pricing-premium">
+                <div class="pricing-badge">Forecast</div>
+                <h3 class="pricing-title">Transit Forecast</h3>
+                <div class="pricing-price">$19.99</div>
+                <p class="pricing-period">One-time purchase</p>
+                <ul class="pricing-features">
+                    <li><strong>18+ pages of predictions</strong></li>
+                    <li>6-month personalized forecast</li>
+                    <li>Month-by-month breakdowns</li>
+                    <li>Intensity heat map</li>
+                    <li>Key dates & opportunities</li>
+                    <li>Challenge period guidance</li>
+                </ul>
+                <a href="#download" class="pricing-cta">Get in App</a>
+                <p class="pricing-note">Available in Western • Vedic • Hellenistic</p>
+            </div>
+
+            <!-- Compatibility Report -->
+            <div class="pricing-card pricing-premium" style="position: relative;">
+                <div class="pricing-badge" style="background: linear-gradient(135deg, #D4B87C 0%, #E8D4B0 100%); color: #1A1F3A;">Most Popular</div>
+                <h3 class="pricing-title">Compatibility Analysis</h3>
+                <div class="pricing-price">$24.99</div>
+                <p class="pricing-period">One-time purchase</p>
+                <ul class="pricing-features">
+                    <li><strong>20+ pages of analysis</strong></li>
+                    <li>Complete synastry chart</li>
+                    <li>Composite chart interpretation</li>
+                    <li>Venus-Mars chemistry</li>
+                    <li>Communication dynamics</li>
+                    <li>Long-term potential</li>
+                </ul>
+                <a href="#download" class="pricing-cta">Get in App</a>
+                <p class="pricing-note">Available in Western • Vedic • Hellenistic</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Report Gallery Section -->
+    <section class="gallery-section">
+        <div class="section-header">
+            <div class="section-label">Inside Your Reports</div>
+            <h2 class="section-title">Professional insights<br>you'll treasure forever</h2>
+            <p class="section-description">
+                Each report is beautifully designed with detailed interpretations, professional visualizations, and actionable guidance
+            </p>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- Natal Chart Preview -->
+            <div class="gallery-item">
+                <div class="gallery-phone">
+                    <img src="images/reports/natal-chart-pdf-cover.png" alt="Natal Chart Report Cover" class="gallery-screenshot">
+                </div>
+                <div class="gallery-description">
+                    <h3 class="gallery-title">Your Cosmic Blueprint Decoded</h3>
+                    <p class="gallery-text">
+                        The Natal Chart Analysis reveals your complete astrological profile—your Sun sign's core identity,
+                        Moon sign's emotional landscape, and Rising sign's worldly persona. Understand how all 10 planetary
+                        placements shape your personality, relationships, career path, and life purpose.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Natal Chart Aspects -->
+            <div class="gallery-item gallery-item-reverse">
+                <div class="gallery-phone">
+                    <img src="images/reports/natal-chart-pdf-aspects.png" alt="Natal Chart Aspects Analysis" class="gallery-screenshot">
+                </div>
+                <div class="gallery-description">
+                    <h3 class="gallery-title">Aspect Patterns Revealed</h3>
+                    <p class="gallery-text">
+                        Discover how planets communicate in your chart through major aspects. See your Grand Trines,
+                        T-Squares, and other configurations that define your strengths, challenges, and unique gifts.
+                        Each aspect is interpreted with practical guidance for harnessing its energy.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Lunar Cycle -->
+            <div class="gallery-item">
+                <div class="gallery-phone">
+                    <img src="images/reports/lunar-cycle-pdf-phases.png" alt="Lunar Cycle Phases Guide" class="gallery-screenshot">
+                </div>
+                <div class="gallery-description">
+                    <h3 class="gallery-title">Moon Phase Mastery</h3>
+                    <p class="gallery-text">
+                        Learn to work with the Moon's eight sacred phases—from New Moon intentions to Full Moon
+                        celebrations. Each phase includes rituals, breathwork techniques, and journaling prompts
+                        personalized to your natal Moon sign and element for maximum cosmic alignment.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Transit Calendar -->
+            <div class="gallery-item gallery-item-reverse">
+                <div class="gallery-phone">
+                    <img src="images/reports/transit-forecast-pdf-calendar.png" alt="Transit Forecast Calendar" class="gallery-screenshot">
+                </div>
+                <div class="gallery-description">
+                    <h3 class="gallery-title">Your Cosmic Weather Forecast</h3>
+                    <p class="gallery-text">
+                        Plan your next six months with confidence. The Transit Forecast shows when major planets
+                        activate your chart, highlighting optimal windows for career moves, relationship decisions,
+                        and personal growth. Color-coded intensity ratings help you prepare for challenges and seize opportunities.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Compatibility Chart -->
+            <div class="gallery-item">
+                <div class="gallery-phone">
+                    <img src="images/reports/compatibility-pdf-chart.png" alt="Compatibility Synastry Chart" class="gallery-screenshot">
+                </div>
+                <div class="gallery-description">
+                    <h3 class="gallery-title">Relationship Astrology Deep Dive</h3>
+                    <p class="gallery-text">
+                        The Compatibility Analysis examines your relationship through synastry (how your charts interact)
+                        and composite (your relationship's own chart). Understand your Venus-Mars chemistry,
+                        communication styles, emotional compatibility, and long-term growth potential together.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Three Frameworks -->
+            <div class="gallery-item gallery-item-reverse">
+                <div class="gallery-phone">
+                    <img src="images/reports/compatibility-pdf-cover.png" alt="Multi-Framework Reports" class="gallery-screenshot">
+                </div>
+                <div class="gallery-description">
+                    <h3 class="gallery-title">Three Traditions, Complete Picture</h3>
+                    <p class="gallery-text">
+                        Every report is available in Western (psychological focus), Vedic (karmic insights),
+                        and Hellenistic (classical techniques) traditions. Explore all three to gain the most complete
+                        understanding of your cosmic blueprint—each tradition reveals different facets of your story.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -2274,10 +2693,10 @@
                 <h4>Product</h4>
                 <ul>
                     <li><a href="#features">Features</a></li>
+                    <li><a href="#frameworks">Frameworks</a></li>
+                    <li><a href="#reports">Reports</a></li>
                     <li><a href="#zodiac">Zodiac</a></li>
                     <li><a href="#protocols">Protocols</a></li>
-                    <li><a href="#reports">Reports</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
                 </ul>
             </div>
 
